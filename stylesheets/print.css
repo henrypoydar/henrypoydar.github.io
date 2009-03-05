@@ -1,0 +1,6 @@
+body {
+  color: #000; 
+  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", Arial, Helvetica, FreeSans, sans-serif;
+}
+
+div#card ul { display:none; }
