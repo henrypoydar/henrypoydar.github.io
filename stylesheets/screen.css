@@ -2,7 +2,7 @@
 body{background-color:#fff;color:#444;font-family:"Helvetica Neue Light","HelveticaNeue-Light",Arial,Helvetica,FreeSans,sans-serif;}
 a,a:visited{color:#666;text-decoration:none;}
 a:hover{color:#3274d1;text-decoration:none;}
-div#card{text-align:right;background-color:#fff;width:22em;position:absolute;bottom:2em;right:2em;padding:2em;margin:2em;border-radius:1em;-webkit-border-radius:1em;-moz-border-radius:1em;-webkit-box-shadow:0 0 1em #999;-moz-box-shadow:#999 0px 0px 5px;box-shadow:#999 0px 0px 5px;}
+div#card{text-align:right;background-color:#fff;width:22em;position:absolute;bottom:2em;right:2em;padding:2em;margin:2em;border-radius:1em;-webkit-border-radius:1em;-moz-border-radius:1em;-webkit-box-shadow:0 0 1em #ccc;-moz-box-shadow:#999 0px 0px 5px;box-shadow:#ccc 0px 0px 5px;}
 div#card h1{font-size:1.5em;font-weight:500;margin-bottom:0.5em;}
 div#card ul{list-style:none;float:right;overflow:hidden;}
 div#card ul li{display:inline-block;float:left;border-left:1px solid #bbb;padding:0 0.25em;}
