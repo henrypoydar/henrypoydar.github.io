@@ -1,7 +1,0 @@
-# hpoydar.github.com
-
-My github.com hosted home page. 
-
-## TODO
-
-* CAKE circle cuts background (animated)
