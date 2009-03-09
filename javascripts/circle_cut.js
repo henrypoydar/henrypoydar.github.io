@@ -87,7 +87,3 @@ jQuery.fn.drawCircleCut = function() {
 jQuery.fn.setupCircleCut = function() {
   this.each(function() {setupCircleCut(this);});
 }
-
-$(document).ready(function() {
-  $('canvas#circle_cut').setupCircleCut();
-});
