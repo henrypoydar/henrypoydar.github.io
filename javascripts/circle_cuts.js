@@ -12,8 +12,8 @@ function drawCircleCuts(context) {
   //    + "translate(75, 0); fill(255); scale(s); rect(0, 0, 50, 50);"
   //  + "}";
   
-  var outer_circles = "";
-  outer_circles += "ellipseMode(RADIUS);";
+  var outer_circles = [];
+  outer_circles.push('ellipseMode(RADIUS);');
   
   var max_radius = width * 100;
   var radius = width/2 + rand(10);
@@ -23,14 +23,14 @@ function drawCircleCuts(context) {
     }
     max_radius = radius;
     var ellipse_radius = (width / 2 + rand(100) * 0.1);
-    outer_circles += "ellipse(" +
-      (thirds_x * 2 + rand(400) * 0.1) + ", " +
-      (thirds_y * 2  + rand(400) * 0.1) + ", " +
-      ellipse_radius + ", " + ellipse_radius + ");";
-    outer_circles += "strokeWeight(" + (rand(40) * 0.1) + "); stroke(0);";
-    outer_circles += "fill(" + ((i == 1) ? '255, 165, 0' : '255') + ');';
+    outer_circles.push('ellipse(' +
+      (thirds_x * 2 + rand(400) * 0.1) + ',' +
+      (thirds_y * 2  + rand(400) * 0.1) + ','  +
+      ellipse_radius + ',' + ellipse_radius + ');');
+    outer_circles.push('strokeWeight(' + (rand(40) * 0.1) + '); stroke(0);');
+    outer_circles.push('fill(' + ((i == 1) ? '255, 165, 0' : '255') + ');');
   }
-  Processing($(context).get(0), outer_circles);
+  Processing($(context).get(0), outer_circles.join(''));
  
   // 
   // // 2 inner circles
