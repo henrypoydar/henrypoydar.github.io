@@ -23,5 +23,5 @@ function rand( min, max ) {
 
 $(document).ready(function() {
   // Draw canvas art
-  $('canvas#art').setupCircleCut();
+  $('canvas#art').setupCircleCuts();
 });
