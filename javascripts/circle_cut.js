@@ -4,53 +4,65 @@ function drawCircleCut(context) {
   var height  = $(window).height();
   var thirds_x = width/3;
   var thirds_y = height/3;
+  
 
-  var a = 0.0;
-  var s = 0.0;
+  
+  script = "float a = 0.0; float s = 0.0; " +
+    + "void setup() { size(200,200); noStroke(); rectMode(CENTER); frameRate(30); }"
+     + "void draw() { background(102); a = a + 0.04; s = cos(a)*2;"
+     + "translate(width/2, height/2); scale(s); fill(51); rect(0, 0, 50, 50);"
+     + "translate(75, 0); fill(255); scale(s); rect(0, 0, 50, 50);"
+   + "}";
+  
+  
+  Processing($(context).get(0), script);
 
-  function setup(p) {
-    p.size(200,200);
-    p.noStroke();
-    p.rectMode(2); // CENTER
-    //p.frameRate(30);
-  }
-  function draw(p) {
-    p.background(102);
-    a = a + 0.04;
-    s = Math.cos(a)*2;
-
-    
-    // p.translate(1, 1);
-    // //p.scale(s); 
-    // p.fill(255);
-    // //p.scale(1.5);
-    // p.translate(s, 1);
-    // p.rect(100, 100, 50, 50); 
-    // 
-    // p.translate(p.width/2, p.height/2);
-    // p.scale(s); 
-    // p.fill(51);
-    // p.rect(0, 0, 50, 50);
-    // 
-    //p.translate(0, 0);
-    p.fill(255);
-    p.scale(s*0.5);
-    p.rectMode(2); // CENTER
-    p.rect(p.width/2, p.height/2, 50, 50);
-
-    // p.translate(12, 0);
-    // p.fill(255);
-    // //p.scale(s);
-    // p.rect(0, 0, 50, 50);
-  }
+  // var a = 0.0;
+  // var s = 0.0;
+  // 
+  // function setup(p) {
+  //   p.size(200,200);
+  //   p.noStroke();
+  //   p.rectMode(2); // CENTER
+  //   //p.frameRate(30);
+  // }
+  // function draw(p) {
+  //   p.background(102);
+  //   a = a + 0.04;
+  //   s = Math.cos(a)*2;
+  // 
+  //   
+  //   // p.translate(1, 1);
+  //   // //p.scale(s); 
+  //   // p.fill(255);
+  //   // //p.scale(1.5);
+  //   // p.translate(s, 1);
+  //   // p.rect(100, 100, 50, 50); 
+  //   // 
+  //   // p.translate(p.width/2, p.height/2);
+  //   // p.scale(s); 
+  //   // p.fill(51);
+  //   // p.rect(0, 0, 50, 50);
+  //   // 
+  //   //p.translate(0, 0);
+  //   p.fill(255);
+  //   p.scale(s*0.5);
+  //   p.rectMode(2); // CENTER
+  //   p.rect(p.width/2, p.height/2, 50, 50);
+  // 
+  //   // p.translate(12, 0);
+  //   // p.fill(255);
+  //   // //p.scale(s);
+  //   // p.rect(0, 0, 50, 50);
+  // }
   //var y = 100;
-  var frameRate = 90;
-  var interval = 1000.0 / frameRate;
-  // setup and run
-  var p = Processing(context);
-  //setup(p);
-  //draw(p);
-  setInterval(function () { draw(p); }, interval);
+  // var frameRate = 90;
+  // var interval = 1000.0 / frameRate;
+  // // setup and run
+  // var p = Processing(context);
+  // //setup(p);
+  // //draw(p);
+  // setInterval(function () { draw(p); }, interval);
 
    
   
