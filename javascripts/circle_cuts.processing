@@ -52,7 +52,7 @@ class OuterCircle {
   void display() {
     pushMatrix();
     translate(move_x, move_y);
-    scale(s);
+    //scale(s);
     fill(color);
     strokeWeight(line_width); 
     stroke(0);
