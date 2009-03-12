@@ -1,36 +1,18 @@
 function drawCircleCuts(context) {
     
-  var width   = $(window).width();
-  var height  = $(window).height();
-  var thirds_x = width/3;
-  var thirds_y = height/3;
-  
-  // script = "float a = 0.0; float s = 0.0; " +
-  //   + "void setup() { size(200,200); noStroke(); rectMode(CENTER); frameRate(30); }"
-  //    + "void draw() { background(102); a = a + 0.04; s = cos(a)*2;"
-  //    + "translate(width/2, height/2); scale(s); fill(51); rect(0, 0, 50, 50);"
-  //    + "translate(75, 0); fill(255); scale(s); rect(0, 0, 50, 50);"
-  //  + "}";
-  
-  var outer_circles = [];
-  outer_circles.push('ellipseMode(RADIUS);');
-  
-  var max_radius = width * 100;
-  var radius = width/2 + rand(10);
-  for (i = 1; i <= 3; i++) {
-    while (radius > max_radius) {
-      radius = width / 3 + width / 2;
-    }
-    max_radius = radius;
-    var ellipse_radius = (width / 2 + rand(100) * 0.1);
-    outer_circles.push('ellipse(' +
-      (thirds_x * 2 + rand(400) * 0.1) + ',' +
-      (thirds_y * 2  + rand(400) * 0.1) + ','  +
-      ellipse_radius + ',' + ellipse_radius + ');');
-    outer_circles.push('strokeWeight(' + (rand(40) * 0.1) + '); stroke(0);');
-    outer_circles.push('fill(' + ((i == 1) ? '255, 165, 0' : '255') + ');');
-  }
-  Processing($(context).get(0), outer_circles.join(''));
+  var init_data = [];
+  init_data.push('float screen_width = ' + $(window).width() + ';');
+  init_data.push('float screen_height = ' + $(window).height() + ';');
+
+  $.get('javascripts/circle_cuts_processing.js', function(data){
+    Processing(
+      $(context).get(0), 
+      init_data.join('\n') + data
+    );
+  });
+
+
+  //Processing($(context).get(0), $.getScript('/javascripts/circle_cuts_processing.js');
  
   // 
   // // 2 inner circles
