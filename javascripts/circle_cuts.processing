@@ -28,11 +28,11 @@ class OuterCircle {
   
   int x, y;
   float radius, line_width;
+  float targetX, targetY;
   int move_x = 0;
   int move_y = 0;
-  float s = 0.0;
-  float a = 0.0;
   String color = '#FFFFFF';
+  float easing = 0.05;
   
   OuterCircle(String c) {
     x = thirds_x * 2 + random(-20,20);
@@ -43,15 +43,28 @@ class OuterCircle {
   }
   
   void update() {
-    move_x += random(-1,1);
-    move_y += random(-1,1);
-    a = a + 0.04;
-    s = cos(a)*2;
+    //move_distance = random(-5,5);
+    
+    
+    
+    targetX = mouseX;
+      float dx = mouseX - move_x;
+      if(abs(dx) > 1) {
+        move_x += dx * easing;
+      }
+
+      targetY = mouseY;
+      float dy = mouseY - move_y;
+      if(abs(dy) > 1) {
+        move_y += dy * easing;
+      }
+    
+
   }
   
   void display() {
     pushMatrix();
-    translate(move_x, move_y);
+    //translate(move_x, move_y);
     //scale(s);
     fill(color);
     strokeWeight(line_width); 
