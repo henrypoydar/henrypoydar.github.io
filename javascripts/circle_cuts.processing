@@ -3,12 +3,21 @@ int thirds_x = screen_width / 3;
 int thirds_y = screen_height / 3;
 
 void setup() {
+  
   size(screen_width, screen_height);
   smooth();
   ellipseMode(RADIUS);
+  
   oc1 = new OuterCircle('FFA500');
   oc2 = new OuterCircle('FFFFFF');
   oc3 = new OuterCircle('FFFFFF');
+  
+  ic1 = new InnerCircle();
+  ic2 = new InnerCircle();
+  
+  spot = new Spot();
+
+  
 }
 
 void draw() {
@@ -19,58 +28,90 @@ void draw() {
   oc2.update();
   oc3.update();
   
+  ic1.update();
+  ic2.update();
+  
+  spot.update();
+  
   oc1.display();
   oc2.display();
   oc3.display();
+  
+  ic1.display();
+  ic2.display();
+
+  spot.display();
+  
 }
 
-class OuterCircle {
+
+class CircleCut {
   
-  int x, y;
+  int xpos, ypos;
   float radius, line_width;
-  float targetX, targetY;
-  int move_x = 0;
-  int move_y = 0;
   String color = '#FFFFFF';
-  float easing = 0.05;
   
-  OuterCircle(String c) {
-    x = thirds_x * 2 + random(-20,20);
-    y = thirds_y * 2  + random(-20,20);
-    color = c;
-    radius = screen_width / 2 + random(-10,10);
-    line_width = random(40) * 0.1;
+  CircleCut(int x, int y, float r, float lw, String c) {
+    xpos = x; ypos = y; radius = r;
+    line_width = lw; color = c;
   }
   
   void update() {
-    //move_distance = random(-5,5);
-    
-    
-    
-    targetX = mouseX;
-      float dx = mouseX - move_x;
-      if(abs(dx) > 1) {
-        move_x += dx * easing;
-      }
-
-      targetY = mouseY;
-      float dy = mouseY - move_y;
-      if(abs(dy) > 1) {
-        move_y += dy * easing;
-      }
-    
-
+    // TODO: Animate
   }
   
   void display() {
-    pushMatrix();
-    //translate(move_x, move_y);
-    //scale(s);
     fill(color);
     strokeWeight(line_width); 
     stroke(0);
-    ellipse(x, y, radius, radius);
-    popMatrix();
+    ellipse(xpos, ypos, radius, radius);
+  }
+  
+}
+
+class OuterCircle extends CircleCut {
+  
+  OuterCircle(String c) {
+    xpos = thirds_x * 2 + random(-20,20);
+    ypos = thirds_y * 2  + random(-20,20);
+    color = c;
+    radius = screen_width / 2.25 + random(-20,20);
+    line_width = random(40) * 0.1;
+  }
+  
+}
+
+class InnerCircle extends CircleCut {
+  
+  InnerCircle() {
+    xpos = thirds_x * 2 + random(-40,40);
+    ypos = thirds_y * 2  + random(-40,40);
+    radius = screen_width / 4 + random(-5,5);
+    line_width = random(40) * 0.1;
+  }
+  
+  void display() {
+    noFill();
+    strokeWeight(line_width); 
+    stroke(0);
+    ellipse(xpos, ypos, radius, radius);
+  }
+
+}
+
+class Spot extends CircleCut {
+  
+  
+  Spot() {
+    xpos = thirds_x * 2 + random(-40,40);
+    ypos = thirds_y * 2  + random(-40,40);
+    radius = screen_width / 6 + random(-5,5);
+  }
+  
+  void display() {
+    fill(0);
+    noStroke();
+    ellipse(xpos, ypos, radius, radius);
   }
   
 }
