@@ -10,44 +10,17 @@ function drawCircleCuts(context) {
       init_data.join('\n') + data
     );
   });
-
-
-  //Processing($(context).get(0), $.getScript('/javascripts/circle_cuts_processing.js');
- 
-  // 
-  // // 2 inner circles
-  // for (i = 1; i <= 2; i++) {
-  //   ctx.beginPath();
-  //   ctx.arc(
-  //     (thirds_x * 2 + rand(800) * 0.1),
-  //     (thirds_y * 2  + rand(800) * 0.1),
-  //     (width / 4 - rand(100) * 0.1),
-  //     0,
-  //     Math.PI*2,
-  //     true
-  //   );
-  //   ctx.strokeStyle = 'black';
-  //   ctx.lineWidth = rand(40) * 0.1;
-  //   ctx.stroke();
-  // }
-  // 
-  // // Final center circle
-  // ctx.beginPath();
-  // ctx.arc(
-  //   (thirds_x * 2 + rand(800) * 0.1),
-  //   (thirds_y * 2  + rand(800) * 0.1),
-  //   (width / 6 - rand(100) * 0.1),
-  //   0,
-  //   Math.PI*2,
-  //   true
-  // );
-  // ctx.fillStyle = 'black';
-  // ctx.fill();
+  
 }
 
 function setupCircleCuts(context) {
   $(context).drawCircleCuts();
   drawCanvasTag('Randomly generated overlapping circle forms');
+  
+  // Redraw on resize or click
+  $(window).resize(function() {$(context).drawCircleCuts();});
+  $(context).click(function() {$(context).drawCircleCuts();});
+  
 }
 
 jQuery.fn.drawCircleCuts = function() {
@@ -57,3 +30,4 @@ jQuery.fn.drawCircleCuts = function() {
 jQuery.fn.setupCircleCuts = function() {
   this.each(function() {setupCircleCuts(this);});
 }
+

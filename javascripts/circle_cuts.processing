@@ -8,9 +8,9 @@ void setup() {
   smooth();
   ellipseMode(RADIUS);
   
-  oc1 = new OuterCircle('FFA500');
-  oc2 = new OuterCircle('FFFFFF');
-  oc3 = new OuterCircle('FFFFFF');
+  oc1 = new OuterCircle(255,165,0);
+  oc2 = new OuterCircle(255,255,255);
+  oc3 = new OuterCircle(255,255,255);
   
   ic1 = new InnerCircle();
   ic2 = new InnerCircle();
@@ -49,11 +49,12 @@ class CircleCut {
   
   int xpos, ypos;
   float radius, line_width;
-  String color = '#FFFFFF';
+  int fill_r, fill_g, fill_b;
   
-  CircleCut(int x, int y, float r, float lw, String c) {
+  CircleCut(int x, int y, float r, float lw, int fr, int fg, int fb) {
     xpos = x; ypos = y; radius = r;
-    line_width = lw; color = c;
+    line_width = lw; fill_color = c;
+    fill_r = fr; fill_b = fg; fill_b = fb;
   }
   
   void update() {
@@ -61,7 +62,7 @@ class CircleCut {
   }
   
   void display() {
-    fill(color);
+    fill(fill_r, fill_g, fill_b);
     strokeWeight(line_width); 
     stroke(0);
     ellipse(xpos, ypos, radius, radius);
@@ -71,12 +72,12 @@ class CircleCut {
 
 class OuterCircle extends CircleCut {
   
-  OuterCircle(String c) {
+  OuterCircle(int fr, int fg, int fb) {
     xpos = thirds_x * 2 + random(-20,20);
     ypos = thirds_y * 2  + random(-20,20);
-    color = c;
+    fill_r = fr; fill_g = fg, fill_b = fb;
     radius = screen_width / 2.25 + random(-20,20);
-    line_width = random(40) * 0.1;
+    line_width = random(60) * 0.1;
   }
   
 }
@@ -87,7 +88,7 @@ class InnerCircle extends CircleCut {
     xpos = thirds_x * 2 + random(-40,40);
     ypos = thirds_y * 2  + random(-40,40);
     radius = screen_width / 4 + random(-5,5);
-    line_width = random(40) * 0.1;
+    line_width = random(60) * 0.1;
   }
   
   void display() {
