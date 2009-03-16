@@ -17,7 +17,6 @@ void setup() {
   
   spot = new Spot();
 
-  
 }
 
 void draw() {
@@ -147,5 +146,4 @@ class Spot extends CircleCut {
     ellipse(xpos, ypos, radius, radius);
   }
 
-  
 }
