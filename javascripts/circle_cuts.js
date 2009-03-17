@@ -14,16 +14,16 @@ function drawCircleCuts(context) {
 }
 
 function setupCircleCuts(context) {
+     
   $(context).drawCircleCuts();
   drawCanvasTag('Randomly generated overlapping circle forms');
-  
+    
   // Redraw on resize
-  // $(window).resize(function() {
-  //   //TODO: Rip from DOM then add again, check for smoothness in Safari
-  //   //$(context).remove();
-  //   //$(context).drawCircleCuts();
-  // });
+  $(window).resize(function() { location.reload(); });
   
+  // Redraw on click
+  $(context).click(function() { location.reload(); });
+
 }
 
 jQuery.fn.drawCircleCuts = function() {

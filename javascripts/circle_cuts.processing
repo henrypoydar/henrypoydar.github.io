@@ -100,7 +100,7 @@ class OuterCircle extends CircleCut {
     ypos = thirds_y * 2  + random(-20,20);
     fill_r = fr; fill_g = fg, fill_b = fb;
     radius = screen_width / 2.25 + random(-20,20);
-    line_width = random(60) * 0.1;
+    line_width = random(50) * 0.1;
     orig_x = xpos;
     orig_y = ypos;
     resetEasingTargets();
