@@ -16,7 +16,7 @@ function drawCircleCuts(context) {
 function setupCircleCuts(context) {
      
   $(context).drawCircleCuts();
-  drawCanvasTag('Randomly generated overlapping circle forms');
+  //drawCanvasTag('Randomly generated overlapping circle forms');
     
   // Redraw on resize
   $(window).resize(function() { location.reload(); });
