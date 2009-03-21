@@ -3,7 +3,7 @@ html{overflow:hidden;}
 body{background-color:#fff;color:#444;font-family:"Helvetica Neue Light","HelveticaNeue-Light",Arial,Helvetica,FreeSans,sans-serif;}
 a,a:visited{color:#666;text-decoration:none;}
 a:hover{color:#3274d1;text-decoration:none;}
-div#card{text-align:center;background-color:#fff;opacity:0.95;width:25em;position:absolute;bottom:2em;right:2em;padding:1.5em;margin:2em;border-radius:0.5em;-webkit-border-radius:0.5em;-moz-border-radius:0.5em;-webkit-box-shadow:0 0 1em #ccc;-moz-box-shadow:#999 0px 0px 1em;box-shadow:#ccc 0px 0px 1em;z-index:5000;}
+div#card{text-align:center;background-color:#fff;opacity:0.95;position:absolute;bottom:20px;right:20px;padding:1em;border-radius:0.5em;-webkit-border-radius:0.3em;-moz-border-radius:0.3em;-webkit-box-shadow:0 0 0.3em #ccc;-moz-box-shadow:#999 0px 0px 0.5em;box-shadow:#ccc 0px 0px 0.5em;z-index:5000;}
 div#card h1{display:none;}
 div#card ul{list-style:none;margin:0 auto;padding:0;overflow:hidden;}
 div#card ul li{display:inline-block;text-transform:uppercase;font-size:0.7em;letter-spacing:0.1em;padding:0 0.3em;}

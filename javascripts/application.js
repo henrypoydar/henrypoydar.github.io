@@ -8,7 +8,7 @@ function drawCanvasTag(text) {
   CanvasTextFunctions.enable(ctx);
   
   ctx.strokeStyle = "rgba(0,0,0,0.50)";
-  ctx.drawText("sans", 8, 10, 10, text);
+  ctx.drawText("sans", 8, 17, 10, text);
   
 }
 
