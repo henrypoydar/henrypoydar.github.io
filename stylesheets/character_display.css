@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow: hidden;
+}
+
+body, html {
+  height: 100%;
+}
+
+body {
+  font-size: 100%;
+  background: #000;
+  color: #fff;
+  font-family: Arial, helvetica, sans-serif;
+  text-align: center;
+}
+
+div#chars {
+  font-weight: bold;
+}
+
+div#chars > div {
+  display: none;
+}
