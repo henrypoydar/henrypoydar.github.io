@@ -1,5 +1,5 @@
 function setupChars(chars_array) {
-  var h = $(window).height() / 3;
+  var h = $(window).height();
   $('body').css('font-size', h + 'px');
   $.each(chars_array, function(i) {
     $('#chars').append('<div>' + chars_array[i] + '</div>');
