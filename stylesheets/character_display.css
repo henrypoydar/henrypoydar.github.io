@@ -13,9 +13,10 @@ body, html {
 
 body {
   font-size: 100%;
+  line-height: 100%;
   background: #000;
   color: #fff;
-  font-family: Arial, helvetica, sans-serif;
+  font-family: Whitney, 'Myriad Pro', MyriadPro, Helvetica, 'Helvetica Neue', Arial, sans-serif;
   text-align: center;
 }
 

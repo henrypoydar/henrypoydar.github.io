@@ -4,7 +4,7 @@ function drawCircleCuts(context) {
   init_data.push('float screen_width = ' + $(window).width() + ';');
   init_data.push('float screen_height = ' + $(window).height() + ';');
 
-  $.get('javascripts/circle_cuts.processing', function(data){
+  $.get('processing/circle_cuts.pde', function(data){
     Processing(
       $(context).get(0), 
       init_data.join('\n') + data
