@@ -61,19 +61,19 @@ class CircleCut {
   
   void update() {
     
-    float dx = target_x - xpos;
-    if(abs(dx) > 1) {
-      xpos += dx * easing;
-    } else {
-      resetEasingTargets();
-    }
-
-    float dy = target_y - ypos;
-    if(abs(dy) > 1) {
-      ypos += dy * easing;
-    } else {
-      resetEasingTargets();
-    }
+    // float dx = target_x - xpos;
+    //    if(abs(dx) > 1) {
+    //      xpos += dx * easing;
+    //    } else {
+    //      resetEasingTargets();
+    //    }
+    // 
+    //    float dy = target_y - ypos;
+    //    if(abs(dy) > 1) {
+    //      ypos += dy * easing;
+    //    } else {
+    //      resetEasingTargets();
+    //    }
   
   }
   
