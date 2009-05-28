@@ -43,15 +43,14 @@ void draw() {
   
 }
 
-
 class CircleCut {
   
-  int xpos, ypos;
+  float xpos, ypos;
   float radius, line_width;
   int fill_r, fill_g, fill_b;
-  int target_x, target_y;
-  int orig_x, orig_y;
-  float easing = 0.01;
+  float xoff, yoff = 0.0;
+  float xincrement = random(4)*0.01;
+  float yincrement = random(4)*0.01;
   
   CircleCut(int x, int y, float r, float lw, int fr, int fg, int fb) {
     xpos = x; ypos = y; radius = r;
@@ -60,21 +59,10 @@ class CircleCut {
   }
   
   void update() {
-    
-    // float dx = target_x - xpos;
-    //    if(abs(dx) > 1) {
-    //      xpos += dx * easing;
-    //    } else {
-    //      resetEasingTargets();
-    //    }
-    // 
-    //    float dy = target_y - ypos;
-    //    if(abs(dy) > 1) {
-    //      ypos += dy * easing;
-    //    } else {
-    //      resetEasingTargets();
-    //    }
-  
+    xpos = noise(xoff)*width;
+    ypos = noise(yoff)*height;
+    xoff += xincrement;
+    yoff += yincrement;
   }
   
   void display() {
@@ -84,13 +72,6 @@ class CircleCut {
     ellipse(xpos, ypos, radius, radius);
   }
   
-  void resetEasingTargets() {
-    target_x = xpos + random(-30,30);
-    target_y = ypos + random(-30,30);
-    if((abs(target_x - xpos) > 30) || (abs(target_y - ypos) > 30)) {
-      resetEasingTargets();
-    }
-  }
 }
 
 class OuterCircle extends CircleCut {
@@ -100,10 +81,7 @@ class OuterCircle extends CircleCut {
     ypos = thirds_y * 2  + random(-20,20);
     fill_r = fr; fill_g = fg, fill_b = fb;
     radius = screen_width / 2.25 + random(-20,20);
-    line_width = random(50) * 0.1;
-    orig_x = xpos;
-    orig_y = ypos;
-    resetEasingTargets();
+    line_width = random(30) * 0.1;
   }
   
 }
@@ -114,10 +92,7 @@ class InnerCircle extends CircleCut {
     xpos = thirds_x * 2 + random(-40,40);
     ypos = thirds_y * 2  + random(-40,40);
     radius = screen_width / 4 + random(-5,5);
-    line_width = random(60) * 0.1;
-    orig_x = xpos;
-    orig_y = ypos;
-    resetEasingTargets();
+    line_width = random(30) * 0.1;
   }
   
   void display() {
@@ -135,9 +110,6 @@ class Spot extends CircleCut {
     xpos = thirds_x * 2 + random(-40,40);
     ypos = thirds_y * 2  + random(-40,40);
     radius = screen_width / 6 + random(-5,5);
-    orig_x = xpos;
-    orig_y = ypos;
-    resetEasingTargets();
   }
   
   void display() {
