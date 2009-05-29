@@ -1,7 +1,3 @@
-
-//TODO: logarithmic ystep, middle ones vibrate?, xoff globally?
-
-
 int wave_number = 200;
 Wave[] waves = new Wave[wave_number];
 

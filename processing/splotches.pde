@@ -1,7 +1,3 @@
-
-
-
-
 void setup() {  
   
   color[] palette = [

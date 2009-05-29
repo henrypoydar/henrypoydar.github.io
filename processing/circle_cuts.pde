@@ -1,16 +1,24 @@
-
 int thirds_x = screen_width / 3;
 int thirds_y = screen_height / 3;
+
+OuterCircle oc1, oc2, oc3;
+InnerCircle ic1, ic2;
+Spot spot;
 
 void setup() {
   
   size(screen_width, screen_height);
   smooth();
+  frameRate(30);
   ellipseMode(RADIUS);
   
-  oc1 = new OuterCircle(255,165,0);
-  oc2 = new OuterCircle(255,255,255);
-  oc3 = new OuterCircle(255,255,255);
+ oc1 = new OuterCircle(color(255,165,0));
+ oc2 = new OuterCircle(color(0,0,0));
+ oc3 = new OuterCircle(color(255,255,255));
+
+  // oc1 = new OuterCircle();
+  // oc2 = new OuterCircle();
+  // oc3 = new OuterCircle();
   
   ic1 = new InnerCircle();
   ic2 = new InnerCircle();
@@ -26,48 +34,45 @@ void draw() {
   oc1.update();
   oc2.update();
   oc3.update();
-  
   ic1.update();
   ic2.update();
-  
   spot.update();
   
   oc1.display();
   oc2.display();
   oc3.display();
-  
   ic1.display();
   ic2.display();
-
   spot.display();
   
 }
 
 class CircleCut {
   
-  float xpos, ypos;
-  float radius, line_width;
-  int fill_r, fill_g, fill_b;
-  float xoff, yoff = 0.0;
-  float xincrement = random(4)*0.01;
-  float yincrement = random(4)*0.01;
+  float xpos, ypos, radius, line_width;
+  color fill_color;
   
-  CircleCut(int x, int y, float r, float lw, int fr, int fg, int fb) {
+  CircleCut(float x, float y, float r, color c) {
     xpos = x; ypos = y; radius = r;
-    line_width = lw; fill_color = c;
-    fill_r = fr; fill_b = fg; fill_b = fb;
+    fill_color = c;
+    line_width = 5.0;
   }
   
   void update() {
-    xpos = noise(xoff)*width;
-    ypos = noise(yoff)*height;
-    xoff += xincrement;
-    yoff += yincrement;
+    
+    //xpos += (noise(xoff)*width - width/2)*.1;
+    //ypos += (noise(yoff)*height - height/2)*.1;
+    //xoff += xincrement;
+    //yoff += yincrement;
+    
+    xpos += random(-0.25, 0.25);
+    xpos += random(-0.25, 0.25);
+    
   }
   
   void display() {
-    fill(fill_r, fill_g, fill_b);
-    strokeWeight(line_width); 
+    fill(fill_color);
+    strokeWeight(line_width);   
     stroke(0);
     ellipse(xpos, ypos, radius, radius);
   }
@@ -76,12 +81,18 @@ class CircleCut {
 
 class OuterCircle extends CircleCut {
   
-  OuterCircle(int fr, int fg, int fb) {
+  OuterCircle(color c) {
     xpos = thirds_x * 2 + random(-20,20);
     ypos = thirds_y * 2  + random(-20,20);
-    fill_r = fr; fill_g = fg, fill_b = fb;
+    fill_color = c;
     radius = screen_width / 2.25 + random(-20,20);
     line_width = random(30) * 0.1;
+  }
+  
+  void display() {
+    noStroke();
+    fill(fill_color);
+    ellipse(xpos, ypos, radius, radius);
   }
   
 }
