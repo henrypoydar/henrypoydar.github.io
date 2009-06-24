@@ -1,4 +1,3 @@
-
 int thirds_x = screen_width / 3;
 int thirds_y = screen_height / 3;
 
@@ -9,7 +8,7 @@ void setup() {
   ellipseMode(RADIUS);
   
   oc1 = new OuterCircle(255,165,0);
-  oc2 = new OuterCircle(255,255,255);
+  oc2 = new OuterCircle(0,0,0);
   oc3 = new OuterCircle(255,255,255);
   
   ic1 = new InnerCircle();
@@ -96,8 +95,8 @@ class CircleCut {
 class OuterCircle extends CircleCut {
   
   OuterCircle(int fr, int fg, int fb) {
-    xpos = thirds_x * 2 + random(-20,20);
-    ypos = thirds_y * 2  + random(-20,20);
+    xpos = thirds_x * 2 + random(-40,40);
+    ypos = thirds_y * 2  + random(-40,40);
     fill_r = fr; fill_g = fg, fill_b = fb;
     radius = screen_width / 2.25 + random(-20,20);
     line_width = random(50) * 0.1;
@@ -105,6 +104,13 @@ class OuterCircle extends CircleCut {
     orig_y = ypos;
     resetEasingTargets();
   }
+  
+  void display() {
+    fill(fill_r, fill_g, fill_b);
+    noStroke();
+    ellipse(xpos, ypos, radius, radius);
+  }
+  
   
 }
 
@@ -114,7 +120,7 @@ class InnerCircle extends CircleCut {
     xpos = thirds_x * 2 + random(-40,40);
     ypos = thirds_y * 2  + random(-40,40);
     radius = screen_width / 4 + random(-5,5);
-    line_width = random(60) * 0.1;
+    line_width = random(30) * 0.1;
     orig_x = xpos;
     orig_y = ypos;
     resetEasingTargets();
@@ -142,7 +148,9 @@ class Spot extends CircleCut {
   
   void display() {
     fill(0);
-    noStroke();
+    strokeWeight(20); 
+    stroke(255);
+    
     ellipse(xpos, ypos, radius, radius);
   }
 
