@@ -1,0 +1,241 @@
+!!!
+%html{ :lang => "en" }
+  
+  %head
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
+    %title
+      Aristo
+    %link{ :href => "stylesheets/screen.css", :rel => "stylesheet", :media => "screen, projection", :type => "text/css" }
+  
+  %body
+    
+    #header.container
+      %h1
+        Aristo
+      %h2
+        Something believed to be the best of it's kind:
+        %i
+          the trout is the aristocrat of freshwater fish
+          
+      %p.compass
+        Examples of the CSS3
+        %a{:href => 'http://github.com/hpoydar/compass-aristo-plugin'} Aristo plugin
+        for the
+        %a{:href => 'http://compass-style.org'} Compass
+        CSS authoring framework in action. Looks best in Webkit browsers (Safari, Chrome).
+          
+    .section.container
+      %h2
+        Buttons
+        
+      .column.span-8        
+        %p
+          %button.aristo-default
+            More
+        
+          %button.aristo-default{:disabled => 'disabled'}
+            More
+            
+        %p.compass
+          %code
+            button.aristo-default
+          or
+          %code
+            +aristo-default-button
+          
+      .column.span-8.last
+        %p
+          %button.aristo-blue
+            More
+
+          %button.aristo-blue{:disabled => 'disabled'}
+            More
+            
+        %p.compass
+          %code
+            button.aristo-blue
+          or
+          %code
+            +aristo-blue-button
+    
+    
+              
+    .section.container
+      %h2
+        Controls
+        
+      .column.span-8
+        %p
+          %input.aristo{:type => 'checkbox', :id => 'checkbox_a'}
+          %label.aristo-checkbox{:for => 'checkbox_a'}
+            Checkbox A
+          %br
+          %input.aristo{:type => 'checkbox', :id => 'checkbox_b'}
+          %label.aristo-checkbox{:for => 'checkbox_b'}
+            Checkbox B
+            
+      
+        %p.compass
+          %code
+            label.aristo-checkbox
+          and
+          %code
+            input[type=checkbox].aristo
+          or
+          %code
+            +aristo-checkbox
+      
+      .column.span-8      
+        %p
+          %input.aristo{:type => 'radio', :name => 'radio', :value => 'a', :id => 'radio_a', :checked => 'checked'}
+          %label.aristo-radio{:for => 'radio_a'}
+            Radio A
+          %br
+          %input.aristo{:type => 'radio', :name => 'radio', :value => 'b', :id => 'radio_b'}
+          %label.aristo-radio{:for => 'radio_b'}
+            Radio B
+          %br
+          %input.aristo{:type => 'radio', :name => 'radio', :value => 'c', :id => 'radio_c'}
+          %label.aristo-radio{:for => 'radio_c'}
+            Radio C
+            
+        %p.compass
+          %code
+            label.aristo-radio
+          and
+          %code
+            input[type=radio].aristo
+          or
+          %code
+            +aristo-radio
+
+            
+      .column.span-8.last
+        %p
+          %input{:type => 'range'}
+          
+        %p.compass
+          %code
+            +aristo-slider
+          
+      .column.span-8
+        %p
+          %select.aristo
+            %option
+              Target A
+            %option
+              Target B
+            %option 
+              Target C
+        
+        %p.compass
+          %code
+            select.aristo
+          or
+          %code
+            +aristo-select
+        
+      
+    .section.container
+      %h2
+        Menus
+
+      .column.span-8
+
+        %ul.aristo-menu
+          %li
+            %a
+              New
+          %li
+            %a
+              Open
+          %li
+            %a
+              Save
+          %li
+            %a
+              Project
+          %li
+            %a
+              Build
+              
+        %p.compass
+          %code
+            ul.aristo-menu
+          or
+          %code
+            +aristo-menu
+            
+      .column.span-8
+
+        %ul.aristo-menu-inverse
+          %li
+            %a
+              New
+          %li
+            %a
+              Open
+          %li
+            %a
+              Save
+          %li
+            %a
+              Project
+          %li
+            %a
+              Build
+              
+        %p.compass
+          %code
+            ul.aristo-menu-inverse
+          or
+          %code
+            +aristo-menu-inverse
+      
+      
+    .section.container
+      %h2
+        Scrollbars
+        
+      %div.span-8{:style => "overflow: scroll; height: 300px;"}
+        %p.span-16
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut tincidunt augue. Nunc placerat, libero eu lobortis mollis, mi lectus tristique metus, vel tincidunt nibh est sed odio. Donec euismod ultricies est, nec porta ipsum dictum sit amet. Suspendisse lacus purus, ullamcorper eget rutrum ut, laoreet vitae velit. Nam in leo eu nisi congue sagittis sed sed nisi. Sed ultricies luctus justo. Pellentesque orci arcu, vulputate vel dapibus non, posuere a orci. Suspendisse quis massa magna. Suspendisse potenti. Fusce placerat tempor purus id euismod. Praesent et turpis nisl, in pellentesque nisl. Nam vulputate justo tristique turpis tincidunt id dictum orci aliquet.
+        %p.span-16
+          Phasellus laoreet justo non libero lacinia fermentum commodo felis ornare. Quisque in est quis turpis venenatis gravida. Nullam eu enim quis mauris ultricies sollicitudin. Nunc convallis ante et massa condimentum nec interdum nibh ornare. Morbi fringilla sapien vel lacus ultricies id malesuada purus dignissim. Donec ut ornare nulla. Phasellus ipsum urna, venenatis at lacinia pulvinar, faucibus non metus. Proin adipiscing porttitor mollis. Nam risus dui, hendrerit sed elementum vitae, eleifend nec sem. Nunc vehicula, ligula eget sagittis dictum, tellus leo eleifend lorem, eget semper neque lorem in erat. Nunc non risus non velit mattis ultricies. Nunc volutpat feugiat justo id sollicitudin. Praesent in odio neque, id tempor diam.
+        %p.span-16  
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas egestas tempus ornare. Ut adipiscing feugiat tincidunt. Sed adipiscing imperdiet nisl, vitae mollis ante venenatis ut. Donec mollis, nulla vel malesuada vehicula, risus sem faucibus arcu, sed varius velit justo et risus. Mauris iaculis commodo erat, eget suscipit mi tempus in. Nullam venenatis sapien nec est mollis lacinia. Aenean placerat suscipit lectus, a luctus libero eleifend vel. Cras turpis mi, porta eget pharetra id, pharetra eget felis. Ut ac eros justo. Duis quis velit consequat eros placerat malesuada. In luctus lacus ut felis euismod porttitor. Aliquam tristique augue quis nunc imperdiet cursus. Aliquam erat volutpat. Donec leo est, placerat vel tristique at, imperdiet ut massa. Maecenas vel tortor a mi sodales eleifend eleifend eget nibh. Cras sagittis vehicula velit, et ultricies ante vehicula sit amet. Fusce massa risus, tempor eget elementum pharetra, sodales eu felis. Nam ut tellus neque, vitae dapibus purus.
+
+      %p.compass.span-8
+        %code
+          +aristo-scrollbars
+
+    .section.container.text
+      %h2
+        Text
+
+      %p
+        %span.regular
+          ARIAL Regular 12/22
+        
+      %p
+        %span.bold
+          ARIAL Bold 14/24
+        
+      %p.compass.span-8
+        %code
+          +regular-aristo-font
+        or
+        %code
+          +bold-aristo-font
+        
+    .section.container
+      %h2
+        Windows
+
+      %p
+        %i
+          TODO
+
+        
+    #footer.container
+      = 'This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-Share Alike 3.0 United States License</a><br /><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/us/88x31.png" /></a>'

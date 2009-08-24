@@ -1,0 +1,73 @@
+@import blueprint
+@import compass/reset
+@import aristo
+
++blueprint-grid
+
+body
+  +regular-aristo-font
+  :color #333
+ 
+p
+  :margin 10px 0
+ 
+a
+  :color rgb(50, 116, 209)
+ 
+#header
+  :margin-top 40px
+  
+  h1
+    :text-transform uppercase
+    :font-size 36px
+    :font-weight bold
+    :height 36px
+    :line-height 36px
+    :color #000
+  
+.section
+  :margin-top 20px
+  
+  h2
+    :color #999
+    :border-bottom 1px solid #ccc
+    :font-size 10px
+    :line-height 12px
+    :margin-bottom 15px
+    :text-transform uppercase
+    :letter-spacing 1px
+    
+  &.text
+    .regular
+      +regular-aristo-font
+    .bold
+      +bold-aristo-font
+  
+#footer
+  :border-top 1px solid #ccc
+  :text-align right
+  :margin-top 20px
+  :padding-top 10px
+  :margin-bottom 40px
+  :font-size 11px
+  :color #999
+  a
+    :color #999
+
+p.compass
+  :padding 7px
+  :margin 10px 15px 10px 0
+  :background #f1f1f1
+  :color #666
+
+code
+  :font-family Monaco, 'Courier New', Tahoma, monospace
+  :color #38667f
+  :font-size 11px
+
++aristo-slider
+
++aristo-scrollbars
+
+
+  
