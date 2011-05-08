@@ -1,0 +1,24 @@
+body {
+  font-family: georgia, times-roman, serif;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+}
+
+/*#wrap {*/
+  /*width: 800px;*/
+  /*margin: 0 auto;*/
+/*}*/
+
+#left, #right {
+  display: inline-block;
+  width: 400px;
+}
+
+#left {
+  text-align: right;
+}
+
+#right {
+  text-align: left;
+}
