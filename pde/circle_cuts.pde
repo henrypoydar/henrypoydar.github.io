@@ -1,9 +1,9 @@
-int thirds_x = screen_width / 3;
-int thirds_y = screen_height / 3;
+int thirds_x = screen.width / 3;
+int thirds_y = screen.height / 3;
 
 void setup() {
   
-  size(screen_width, screen_height);
+  size(screen.width, screen.height);
   smooth();
   ellipseMode(RADIUS);
   
@@ -98,7 +98,7 @@ class OuterCircle extends CircleCut {
     xpos = thirds_x * 2 + random(-40,40);
     ypos = thirds_y * 2  + random(-40,40);
     fill_r = fr; fill_g = fg, fill_b = fb;
-    radius = screen_width / 2.25 + random(-20,20);
+    radius = screen.width / 2.25 + random(-20,20);
     line_width = random(50) * 0.1;
     orig_x = xpos;
     orig_y = ypos;
@@ -119,7 +119,7 @@ class InnerCircle extends CircleCut {
   InnerCircle() {
     xpos = thirds_x * 2 + random(-40,40);
     ypos = thirds_y * 2  + random(-40,40);
-    radius = screen_width / 4 + random(-5,5);
+    radius = screen.width / 4 + random(-5,5);
     line_width = random(30) * 0.1;
     orig_x = xpos;
     orig_y = ypos;
@@ -140,7 +140,7 @@ class Spot extends CircleCut {
   Spot() {
     xpos = thirds_x * 2 + random(-40,40);
     ypos = thirds_y * 2  + random(-40,40);
-    radius = screen_width / 6 + random(-5,5);
+    radius = screen.width / 6 + random(-5,5);
     orig_x = xpos;
     orig_y = ypos;
     resetEasingTargets();

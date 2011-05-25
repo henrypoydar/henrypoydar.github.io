@@ -1,9 +1,13 @@
 # hpoydar.github.com
 
-My github.com hosted home page. 
+My github.com hosted home page.
 
-## TODO
+## Notes
 
-* Add other backgrounds (mosaic, bezier curves)
-* Add links to other stuff/projects
-* Figure out excanvas for IE support. Really.
+For dev:
+
+Install rack-contrib
+
+    gem install rack-contrib
+
+Then run `rackup` to serve it in dev mode and have the processing.js ajax requests work.

@@ -1,0 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+h1 {
+  color: #000; 
+  font-size: 20px;
+  font-weight: normal;
+  left: 50px;
+  opacity: 0.25;
+  position: fixed;
+  top: 50px;
+}
