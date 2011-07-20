@@ -6,19 +6,22 @@
   <link href="css/all.css" media="all" rel="stylesheet" type="text/css" />
   <link href="css/screen.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="css/print.css" media="print" rel="stylesheet" type="text/css" />
-  <script src="js/processing-1.1.0.min.js"></script>
+  <script src="js/lib/jquery-1.6.2.min.js"></script>
+  <script src="js/lib/processing-1.2.3.min.js"></script>
+  <script src="js/lib/coffee-script.js"></script>
+  <script type="text/coffeescript" src="pde/test.pde.coffee"></script>
 </head>
 <body>
-  <canvas data-processing-sources="pde/circle_cuts.pde"></canvas> 
-  <h1>@hpoydar</h1>
-  <script type="text/javascript">
-  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-  </script>
-  <script type="text/javascript">
-  try {
-  var pageTracker = _gat._getTracker("UA-8022559-1");
-  pageTracker._trackPageview();
-  } catch(err) {}</script>
+<canvas id="processing"></canvas>
+<h1>@hpoydar</h1>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8022559-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
 </body>
 </html>
