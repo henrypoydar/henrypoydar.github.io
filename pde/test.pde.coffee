@@ -1,5 +1,5 @@
 # Our main sketch object:
-coffee_draw = (p5) ->  
+coffee_draw = (p5) ->
 
   # processing's "init" method:
 
@@ -22,7 +22,7 @@ coffee_draw = (p5) ->
 # a helper class that will come into play soon
 
 class Bean
-  constructor: (p5, opts) ->  
+  constructor: (p5, opts) ->
 
 # wait for the DOM to be ready, 
 # create a processing instance...
