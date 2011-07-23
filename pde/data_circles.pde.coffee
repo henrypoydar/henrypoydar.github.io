@@ -9,7 +9,7 @@ sketch = (p5) ->
     p5.noStroke()
     @gri = 0.6180339887
     @num_circles = 6
-    @base_radius = @height / 5
+    @base_radius = @width / 7
     @variance = 0.07
     @circles = []
     @colors = [
@@ -46,6 +46,7 @@ sketch = (p5) ->
       
   
   p5.draw = () ->
+    p5.background(@bg...)
     for circle in @circles
       p5.pushMatrix()
       p5.translate $(window).width()*@gri, $(window).height()*@gri
@@ -64,9 +65,9 @@ class DataCircle
     @borders = []
     @radiuses = []
     @changes = []
-    @borders.push(0)
-    @borders.push(@p5.random(@p5.PI*2))
-    @borders.push(@p5.random(@borders[1], @p5.PI*2))
+    @borders.push(0.0)
+    @borders.push(@p5.random(@p5.PI*2.0))
+    @borders.push(@p5.random(@borders[1], @p5.PI*2.0))
     @borders.push(@p5.PI*2.01)
     @rotation = 0
     @init_rotation = @p5.random(@p5.PI*2)
