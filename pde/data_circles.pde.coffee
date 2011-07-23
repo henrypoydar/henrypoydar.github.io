@@ -1,4 +1,4 @@
-sketch = (p5) ->  
+sketch = (p5) ->
 
   p5.setup = () ->
     @width = $(window).width()
@@ -10,6 +10,7 @@ sketch = (p5) ->
     @gri = 0.6180339887
     @num_circles = 6
     @base_radius = @height / 5
+    @variance = 0.07
     @circles = []
     @colors = [
       [220, 219, 235],
@@ -39,6 +40,7 @@ sketch = (p5) ->
         c1: @colors[i*3 + 0],
         c2: @colors[i*3 + 1],
         c3: @colors[i*3 + 2]
+        v:  @variance
       })
       @circles.push(circle)
       
@@ -60,18 +62,32 @@ class DataCircle
     @radius = opts.r
     @colors = [opts.c1, opts.c2, opts.c3]
     @borders = []
+    @radiuses = []
+    @changes = []
     @borders.push(0)
     @borders.push(@p5.random(@p5.PI*2))
     @borders.push(@p5.random(@borders[1], @p5.PI*2))
     @borders.push(@p5.PI*2.01)
+    @rotation = 0
+    @init_rotation = @p5.random(@p5.PI*2)
+    @rotation_step = @p5.random(-@p5.PI/360, @p5.PI/360)
+    for i in [0..2]
+      @changes.push(@p5.random(0.01, 0.04))
+      @radiuses.push(@p5.random(@radius*(1 - opts.v), @radius*(1 + opts.v)))
+    @theta = 0
+    @increment = @p5.random(100) * 0.001
+    
 
   draw: () ->
     @p5.pushMatrix()
+    @p5.rotate @init_rotation + @rotation
     for i in [0..2]
-      #console.log i
+      radius = (@p5.sin(@theta) * @radiuses[i] * @changes[i]) + @radiuses[i]
       @p5.fill @colors[i]...
-      @p5.arc 0, 0, @radius, @radius, @borders[i], @borders[i+1]
+      @p5.arc 0, 0, radius, radius, @borders[i], @borders[i+1]
     @p5.popMatrix()
+    @rotation += @rotation_step
+    @theta += @increment
 
 $(document).ready ->
   canvas = document.getElementById "processing"
