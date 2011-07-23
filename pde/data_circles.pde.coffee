@@ -1,17 +1,77 @@
 sketch = (p5) ->  
 
   p5.setup = () ->
-    p5.size($(window).width(), $(window).height())
-    p5.background(255)
-
+    @width = $(window).width()
+    @height = $(window).height()
+    @bg = [255]
+    p5.size(@width, @height)
+    p5.background(@bg...)
+    p5.noStroke()
+    @gri = 0.6180339887
+    @num_circles = 6
+    @base_radius = @height / 5
+    @circles = []
+    @colors = [
+      [220, 219, 235],
+      [236, 235, 244],
+      [204, 203, 226],
+      [166, 221, 242],
+      [188, 229, 245],
+      [144, 213, 239],
+      [  1, 167, 219],
+      [  1, 186, 244],
+      [  1, 148, 194],
+      [153,  25,  48],
+      [175,  29,  55],
+      [131,  21,  41],
+      [205,  15,  40],
+      [229,  17,  45],
+      [181,  13,  35],
+      [255,  57, 212],
+      [255,  83, 218],
+      [255,  32, 206]
+    ]
+    
+    for i in [0..(@num_circles - 1)]
+      circle = new DataCircle(p5, {
+        i:  i,
+        r:  (@width - @base_radius * i),
+        c1: @colors[i*3 + 0],
+        c2: @colors[i*3 + 1],
+        c3: @colors[i*3 + 2]
+      })
+      @circles.push(circle)
+      
+  
   p5.draw = () ->
-    # set the value of the background equal
-    # to the sketch's current frame count
-    # and the whole canvas will pulse different colors
-    p5.background(p5.frameCount)
+    for circle in @circles
+      p5.pushMatrix()
+      p5.translate $(window).width()*@gri, $(window).height()*@gri
+      circle.draw()
+      p5.popMatrix()
+      p5.fill(@bg...)
+      p5.ellipse(@width*@gri, @height*@gri,
+        @width - @base_radius * @num_circles,
+        @width - @base_radius * @num_circles)
 
 class DataCircle
-  constructor: (p5, opts) ->
+
+  constructor: (@p5, opts) ->
+    @radius = opts.r
+    @colors = [opts.c1, opts.c2, opts.c3]
+    @borders = []
+    @borders.push(0)
+    @borders.push(@p5.random(@p5.PI*2))
+    @borders.push(@p5.random(@borders[1], @p5.PI*2))
+    @borders.push(@p5.PI*2.01)
+
+  draw: () ->
+    @p5.pushMatrix()
+    for i in [0..2]
+      #console.log i
+      @p5.fill @colors[i]...
+      @p5.arc 0, 0, @radius, @radius, @borders[i], @borders[i+1]
+    @p5.popMatrix()
 
 $(document).ready ->
   canvas = document.getElementById "processing"
