@@ -1,18 +1,16 @@
 sketch = (p5) ->
 
   p5.setup = () ->
-    @width = $(window).width()
-    @height = $(window).height()
-    @bg = [255]
-    p5.size(@width, @height)
-    p5.background(@bg...)
-    p5.noStroke()
-    @gri = 0.6180339887
+    @paused      = false
+    @width       = $(window).width()
+    @height      = $(window).height()
+    @bg          = [255]
+    @gri         = 0.6180339887
     @num_circles = 6
     @base_radius = @width / 7
-    @variance = 0.07
-    @circles = []
-    @colors = [
+    @variance    = 0.07
+    @circles     = []
+    @colors      = [
       [220, 219, 235],
       [236, 235, 244],
       [204, 203, 226],
@@ -32,6 +30,9 @@ sketch = (p5) ->
       [255,  83, 218],
       [255,  32, 206]
     ]
+    p5.size(@width, @height)
+    p5.background(@bg...)
+    p5.noStroke()
     
     for i in [0..(@num_circles - 1)]
       circle = new DataCircle(p5, {
@@ -43,9 +44,12 @@ sketch = (p5) ->
         v:  @variance
       })
       @circles.push(circle)
-      
+  
+  p5.keyPressed = () ->
+    p5.setup() if p5.keyCode == 78
   
   p5.draw = () ->
+    return if @paused
     p5.background(@bg...)
     for circle in @circles
       p5.pushMatrix()
