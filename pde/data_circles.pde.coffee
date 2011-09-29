@@ -74,6 +74,7 @@ class DataCircle
     @borders.push(@p5.random(@borders[1], @p5.PI*2.0))
     @borders.push(@p5.PI*2.01)
     @rotation = 0
+    @reverse_rotation = Math.random() * 2 > 1
     @init_rotation = @p5.random(@p5.PI*2)
     @rotation_step = @p5.random(-@p5.PI/360, @p5.PI/360)
     for i in [0..2]
@@ -85,7 +86,10 @@ class DataCircle
 
   draw: () ->
     @p5.pushMatrix()
-    @p5.rotate @init_rotation + @rotation
+    if @reverse_rotation
+      @p5.rotate @init_rotation - @rotation
+    else
+      @p5.rotate @init_rotation + @rotation
     for i in [0..2]
       radius = (@p5.sin(@theta) * @radiuses[i] * @changes[i]) + @radiuses[i]
       @p5.fill @colors[i]...
