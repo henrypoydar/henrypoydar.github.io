@@ -1,4 +1,4 @@
-# hpoydar.github.com
+# hpoydar.github.io
 
 My github.com hosted home page.
 
