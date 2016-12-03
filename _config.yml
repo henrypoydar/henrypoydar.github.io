@@ -1,0 +1,17 @@
+title: Henry Poydar
+email: henry@poydar.com
+description: >
+  Henry Poydar is a human controlling robots.
+baseurl: ""
+url: "https://hpoydar.com"
+twitter_username: https://twitter.com/hpoydar
+github_username:  hpoydar
+markdown: kramdown
+sass:
+  style: compressed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.txt
+  - Rakefile
+  - README.md

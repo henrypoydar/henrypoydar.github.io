@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+// Colors
+$belize-hole: #2980b9;
+$gray: #5a6465;
+$clouds: #ecf0f1;
+$silver: #bdc3c7;
+$pomegranate: #c0392b;
+$nephritis: #27ae60;
+
+$link-color: $belize-hole;
+$border-color: lighten($silver, 10%);
+
+// Type
+$font-sans-serif: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$font-serif: "Merriweather", "Georgia", "Times", serif;
+$font-brand: "Oswald", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$font-mark: "Montserrat", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+html body {
+  color: darken($gray, 5%);
+  background: #fff;
+  font-family: $font-serif;
+  font-size: 2.0em;
+  font-weight: 300;
+  a, a:hover, a:visited { color: $link-color; }
+  a:hover { color: lighten($link-color, 5%); }
+  hr { border-color: $border-color; }
+}
+
+.container { max-width: 64.0rem; }
+
+header {
+  margin-top: 5rem;
+  text-align: center;
+  img {
+    border-radius: 50%;
+    width: 25%;
+    height: 25%;
+    padding: 0;
+  }
+}
+
+footer {
+  text-align: center;
+  ul li {
+    display: inline-block;
+    margin: 1rem;
+    svg {
+      path {
+        fill: $silver;
+      }
+      width: 3rem;
+    }
+    a:hover {
+      svg {
+        path {
+          fill: $link-color;
+        }
+      }
+    }
+  }
+}
+

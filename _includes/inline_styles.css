@@ -1,0 +1,6 @@
+{% capture include_to_scssify %}
+{% include normalize.css %}
+{% include milligram.css %}
+{% include styles.scss %}
+{% endcapture %}
+{{ include_to_scssify | scssify }}
