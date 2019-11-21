@@ -1,15 +1,15 @@
 @charset "utf-8";
 
 // Colors
-$belize-hole: #2980b9;
-$gray: #5a6465;
-$clouds: #ecf0f1;
-$silver: #bdc3c7;
-$pomegranate: #c0392b;
-$nephritis: #27ae60;
+// $belize-hole: #2980b9;
+// $gray: #5a6465;
+// $clouds: #ecf0f1;
+// $silver: #bdc3c7;
+// $pomegranate: #c0392b;
+// $nephritis: #27ae60;
 
-$link-color: $belize-hole;
-$border-color: lighten($silver, 10%);
+$link-color: #007df7;
+$border-color: lighten(#747d8c, 10%);
 
 // Type
 $font-sans-serif: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -18,7 +18,7 @@ $font-brand: "Oswald", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 $font-mark: "Montserrat", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 
 html body {
-  color: darken($gray, 5%);
+  color: #34393f;
   background: #fff;
   font-family: $font-serif;
   font-size: 2.0em;
@@ -46,9 +46,13 @@ footer {
   ul li {
     display: inline-block;
     margin: 1rem;
+    @media only screen and (max-width: 600px) {
+      margin: .5rem;
+
+    }
     svg {
       path {
-        fill: $silver;
+        fill: $border-color;
       }
       width: 3rem;
     }
@@ -60,5 +64,6 @@ footer {
       }
     }
   }
+
 }
 
