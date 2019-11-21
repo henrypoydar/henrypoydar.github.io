@@ -1,24 +1,17 @@
 @charset "utf-8";
 
-// Colors
-// $belize-hole: #2980b9;
-// $gray: #5a6465;
-// $clouds: #ecf0f1;
-// $silver: #bdc3c7;
-// $pomegranate: #c0392b;
-// $nephritis: #27ae60;
 
 $link-color: #007df7;
-$border-color: lighten(#747d8c, 10%);
+$border-color: #B8C2CC;
 
 // Type
 $font-sans-serif: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 $font-serif: "Merriweather", "Georgia", "Times", serif;
 $font-brand: "Oswald", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-$font-mark: "Montserrat", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
 
 html body {
-  color: #34393f;
+  color: #22292F;
   background: #fff;
   font-family: $font-serif;
   font-size: 2.0em;
